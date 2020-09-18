@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Whole Pokedex!{% endblock %}
+
+{% block body %}
+            <div class="row">
+            {% for pokemon in pokemons %}
+                
+                    <div class="card m-3 shadow border-light" style="max-width: 22%;">
+                        <div class="card-body">
+                            <a href="{{ path('pokedex') }}">
+                                <h5 class="card-title float-left">{{pokemon.name|capitalize}} </h5>
+                                <small class="card-title mb-2 text-muted float-right">#{{ pokemon.id }}</small>
+                                
+                                <img class="w-100 pl-3 pr-3" src="{{pokemon.sprite}}" style="max-height: 130px; vertical-align: middle">
+                            </a>
+                        </div>
+                    </div>
+                
+             {%  endfor %}
+            </div>
+{% endblock %}

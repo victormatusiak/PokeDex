@@ -1,0 +1,30 @@
+.row-section{float:left; width:100%  /* fallback for old browsers */
+}
+.row-section h2{float:left; width:100%; color:#000; margin-bottom:30px; font-size: 14px;}
+.row-section h2 span{font-family: 'Libre Baskerville', serif; display:block; font-size:45px; text-transform:none; margin-bottom:20px; margin-top:30px;font-weight:700;}
+.row-section h2 a{color:#d2abce;}
+.btn-default{background:#6B456A; color:#fff; border-radius:30px; border:none; font-size:16px;}
+.fa-spin {
+    margin: 0 auto;}
+body {
+    background-color: lightgray;
+}
+
+.pokemon-card {
+    max-width: 22%;
+    min-width: 200px;
+    transition: all .2s ease-in-out; 
+}
+
+.pokemon-img{
+    max-height: 130px; 
+    vertical-align: middle;
+}
+
+.infinite-scroll-component {
+    overflow: hidden !important;
+}
+
+.pokemon-card:hover {
+    transform: scale(1.1);
+}
