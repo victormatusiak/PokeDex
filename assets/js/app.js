@@ -4,8 +4,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import '../css/app.css';
+
 import Home from './components/Home';
 
-const root = <Router> <Home /></Router>;
+const auth =  
+    <Router> 
+        <Home />
+    </Router>
+
+const root = <Router><Home /></Router>;
     
-ReactDOM.render(root, document.getElementById('root'));
+ReactDOM.render(auth, document.getElementById('root'));

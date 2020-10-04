@@ -22,6 +22,7 @@ class Pokedex extends Component {
             url: 'http://localhost:8000',
         };
 
+        this.getPokemons = this.getPokemons.bind(this);
         this.getMorePokemons = this.getMorePokemons.bind(this);
         this.searchPokemons = this.searchPokemons.bind(this);
     }
@@ -31,7 +32,7 @@ class Pokedex extends Component {
     }
     
     getPokemons() {
-        axios.get(`http://localhost:8000/api/pokemon?page=1`).then(pokemons => {
+        axios.get(this.state.url + `/api/pokemon?page=1`).then(pokemons => {
            
             this.setState({ 
                 pokemons: pokemons.data['hydra:member'], 
@@ -42,7 +43,7 @@ class Pokedex extends Component {
             });
         });
         
-        axios.get(`http://localhost:8000/api/pokemons`).then(pokemons => {
+        axios.get(this.state.url + `/api/pokemons`).then(pokemons => {
            
             this.setState({ 
                 allPokemons: pokemons.data
@@ -62,7 +63,7 @@ class Pokedex extends Component {
     searchPokemons(){
         axios.get(this.state.url + `/api/pokemon?name=` + this.state.search).then(pokemons => {
             this.setState({ 
-                searchedPokemons: pokemons.data['hydra:member'],
+                pokemons: pokemons.data['hydra:member'],
                 next: pokemons.data['hydra:view']['hydra:next'],  
             })
         })
@@ -79,27 +80,19 @@ class Pokedex extends Component {
 
         let filteredPokemons = this.state.pokemons.filter(
             (pokemon) => {
-                return pokemon.name.indexOf(this.state.search) !== -1;
+                return pokemon.name.includes(this.state.search);
             }
         );
-        
-        // .concat(
-        //     this.state.allPokemons.filter(
-        //         (pokemon) => {
-        //             return pokemon.name.indexOf(this.state.search) !== -1;
-        //         }
-        //     )
-        // );
 
         return(
-            <div >
+            <div>
                 <section className="row-section" id="pokedex">
                     <div className="container ">
                         <div className="row">
                             <h2 className="text-center"><span>Pokedex</span></h2>
                         </div>
                         <div className=" my-2 my-lg-0  d-flex justify-content-center "> 
-                            <form className="input-group form-inline w-50">
+                            <form  className="input-group form-inline w-50">
                                 <input 
                                     className="form-control w-50" 
                                     type="search" 
@@ -108,6 +101,13 @@ class Pokedex extends Component {
                                     onChange={this.updateSearch.bind(this)}
                                 />
                                 <div className="input-group-append">
+                                    <button 
+                                        className="btn btn-outline-danger" 
+                                        type="reset" 
+                                        onClick={this.getPokemons}
+                                    >
+                                        Reset
+                                    </button>
                                     <button 
                                         className="btn btn-outline-success" 
                                         type="button" 

@@ -2,18 +2,12 @@
 
 namespace App\Controller;
 
-use App\Entity\Pokemon;
 use App\Repository\PokemonRepository;
 use App\Services\CreatePokemon;
-use App\Services\Type;
-use App\Services\ID;
 use PokePHP\PokeApi;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-
-use Pagerfanta\Adapter\ArrayAdapter;
-use Pagerfanta\Pagerfanta;
 
 class PokedexController extends AbstractController
 {
@@ -36,21 +30,6 @@ class PokedexController extends AbstractController
     public function getPokemons( PokemonRepository $pokemonRepository)
     {   
         $pokemons = $pokemonRepository->findAll(); 
-
-        // $adapter = new ArrayAdapter($pokemons);
-        // $pagerfanta = new Pagerfanta($adapter);
-        // $pagerfanta->setMaxPerPage(20);
-
-        // if ($pagerfanta->hasPreviousPage()) {
-        //     $pagerfanta->getPreviousPage(); // Will not be executed
-        // }
-        
-        // if ($pagerfanta->hasNextPage()) {
-        //     $pagerfanta->getNextPage(); // Will return 2
-        // }
-        
-        // $pagerfanta->setCurrentPage($page);
-        // $pagerfanta->nextPage =  $pagerfanta->getNextPage();
 
         $response = new Response();
 

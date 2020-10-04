@@ -19,6 +19,7 @@
         "build": "encore production --progress"
     },
     "dependencies": {
+        "@auth0/auth0-react": "^1.1.0",
         "@babel/plugin-proposal-class-properties": "^7.10.4",
         "@babel/plugin-transform-runtime": "^7.11.5",
         "algoliasearch": "^4.5.1",
