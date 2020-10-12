@@ -18,8 +18,8 @@ class Pokedex extends Component {
             totalItems: 0,
             next: '',
             last: '',
+            url: 'http://'+ window.location.hostname +':8000',
             //url: 'http://'+ window.location.hostname +':8000',
-            url: 'http://'+ window.location.hostname,
         };
 
         this.getPokemons = this.getPokemons.bind(this);
