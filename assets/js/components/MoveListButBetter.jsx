@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { helper } from '../util.js';
-import Move from './Move';
+import Move from './elements/Move';
 
 const MoveList = ({moves}) => {
     const [filter, setFilter] = useState({sort: 'name', direction: 'asc'});

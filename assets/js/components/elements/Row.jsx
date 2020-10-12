@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Type from '../Type'
+import Type from './Type'
 
 const Row = ({name, types}) => (
     <tr>

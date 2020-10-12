@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { compare } from '../util';
-import Move from './Move';
+import Move from './elements/Move';
 
 class MoveList extends Component {
 

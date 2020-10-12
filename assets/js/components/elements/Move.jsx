@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import {capitalize, restring} from '../util.js';
+import {capitalize, restring} from '../../util.js';
+
+import Type from './Type'
 
 const Move = ({number, move}) => (
         <tr>
@@ -10,9 +12,9 @@ const Move = ({number, move}) => (
                {capitalize(restring(move.name))}
            </td>
            <td>
-                <div className={"icon " + move.type}>
-                    <img src={"../build/icons/"+ move.type +".svg"}/>
-                </div>
+                <Type 
+                    type={move.type}
+                />
            </td>
            <td>
                {capitalize(move.category)}

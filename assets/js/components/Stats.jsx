@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Progress from './Progress';
+import Progress from './elements/Progress';
 import { barWidth } from '../util.js'
 
 class Stats extends Component {
