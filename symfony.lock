@@ -149,9 +149,6 @@
             "./config/packages/nelmio_cors.yaml"
         ]
     },
-    "nikic/php-parser": {
-        "version": "v4.9.1"
-    },
     "ocramius/proxy-manager": {
         "version": "2.8.0"
     },
@@ -209,9 +206,6 @@
     "symfony/asset": {
         "version": "v5.1.5"
     },
-    "symfony/browser-kit": {
-        "version": "v5.1.5"
-    },
     "symfony/cache": {
         "version": "v5.1.5"
     },
@@ -233,21 +227,6 @@
             "./bin/console"
         ]
     },
-    "symfony/css-selector": {
-        "version": "v5.1.5"
-    },
-    "symfony/debug-bundle": {
-        "version": "4.1",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "4.1",
-            "ref": "f8863cbad2f2e58c4b65fa1eac892ab189971bea"
-        },
-        "files": [
-            "./config/packages/dev/debug.yaml"
-        ]
-    },
     "symfony/debug-pack": {
         "version": "v1.0.8"
     },
@@ -258,9 +237,6 @@
         "version": "v2.2.0"
     },
     "symfony/doctrine-bridge": {
-        "version": "v5.1.5"
-    },
-    "symfony/dom-crawler": {
         "version": "v5.1.5"
     },
     "symfony/dotenv": {
@@ -345,15 +321,6 @@
             "./config/packages/mailer.yaml"
         ]
     },
-    "symfony/maker-bundle": {
-        "version": "1.0",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "1.0",
-            "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
-        }
-    },
     "symfony/mime": {
         "version": "v5.1.5"
     },
@@ -392,21 +359,6 @@
     },
     "symfony/orm-pack": {
         "version": "v2.0.0"
-    },
-    "symfony/phpunit-bridge": {
-        "version": "4.3",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "4.3",
-            "ref": "6d0e35f749d5f4bfe1f011762875275cd3f9874f"
-        },
-        "files": [
-            "./.env.test",
-            "./bin/phpunit",
-            "./phpunit.xml.dist",
-            "./tests/bootstrap.php"
-        ]
     },
     "symfony/polyfill-intl-grapheme": {
         "version": "v1.18.1"
