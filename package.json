@@ -34,5 +34,10 @@
         "react-native-search-filter": "^0.1.5",
         "react-router-dom": "^5.2.0",
         "react-window": "^1.8.5"
-    }
+    },
+    "name": "pokedex",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "https://github.com/victormatusiak/PokeDex.git",
+    "author": "ImProMurzyn <35627457+ImProMurzyn@users.noreply.github.com>"
 }
