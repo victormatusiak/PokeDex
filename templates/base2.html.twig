@@ -21,7 +21,10 @@
             <script>
                 window.csrf = "{{ csrf_token('authenticate') }}";
                 {% if app.user %}
-                    window.user = "{{app.user.username}}";
+                    window.user = {
+                        'name': "{{app.user.username}}",
+                        'id': "{{app.user.id}}",
+                    };
                 {% endif %}
             </script>
         {% endblock %}

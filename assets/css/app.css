@@ -4,10 +4,18 @@
 .row-section h2 span{font-family: 'Libre Baskerville', serif; display:block; font-size:45px; text-transform:none; margin-bottom:20px; margin-top:30px;font-weight:700;}
 .row-section h2 a{color:#d2abce;}
 .btn-default{background:#6B456A; color:#fff; border-radius:30px; border:none; font-size:16px;}
-.fa-spin {
-    margin: 0 auto;}
+.fa-spin {margin: 0 auto;}
+
+html, body {
+    height: 100%;
+}
+
 body {
     background-color: lightgray;
+}
+
+#root{
+    height: 100%;
 }
 
 .pokemon-card {
@@ -101,6 +109,117 @@ body {
     background-color: #6890F0;
 }
 
+.icon {
+    border-radius: 100%;
+    height: 32px;
+    width: 32px;
+    margin:auto;
+    transition: 200ms all;
+    display: inline-block;
+}
+
+.icon:hover{
+    filter: saturate(200%);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.icon img {
+    height: 60%;
+    width: 60%;
+    margin: 20%;
+}
+
+.bug {
+    background: #92BC2C;
+    box-shadow: 0 0 20px #92BC2C;
+}
+
+.dark {
+    background: #595761;
+    box-shadow: 0 0 20px #595761;
+}
+
+.dragon {
+    background: #0C69C8;
+    box-shadow: 0 0 20px #0C69C8;
+}
+
+.electric {
+    background: #F2D94E;
+    box-shadow: 0 0 20px #F2D94E;
+}
+
+.fire {
+    background: #FBA54C;
+    box-shadow: 0 0 20px #FBA54C;
+}
+
+.fairy {
+    background: #EE90E6;
+    box-shadow: 0 0 20px #EE90E6;
+}
+
+.fighting {
+    background: #D3425F;
+    box-shadow: 0 0 20px #D3425F;
+}
+
+.flying {
+    background: #A1BBEC;
+    box-shadow: 0 0 20px #A1BBEC;
+}
+
+.ghost {
+    background: #5F6DBC;
+    box-shadow: 0 0 20px #5F6DBC;
+}
+
+.grass {
+    background: #5FBD58;
+    box-shadow: 0 0 20px #5FBD58;
+}
+
+.ground {
+    background: #DA7C4D;
+    box-shadow: 0 0 20px #DA7C4D;
+}
+
+.ice {
+    background: #75D0C1;
+    box-shadow: 0 0 20px #75D0C1;
+}
+
+.normal {
+    background: #A0A29F;
+    box-shadow: 0 0 20px #A0A29F;
+}
+
+.poison {
+    background: #B763CF;
+    box-shadow: 0 0 20px #B763CF;
+}
+
+.psychic {
+    background: #FA8581;
+    box-shadow: 0 0 20px #FA8581;
+}
+
+.rock {
+    background: #C9BB8A;
+    box-shadow: 0 0 20px #C9BB8A;
+}
+
+.steel {
+    background: #5695A3;
+    box-shadow: 0 0 20px #5695A3;
+}
+
+.water {
+    background: #539DDF;
+    box-shadow: 0 0 20px #539DDF;
+}
+
 .label{
     display: inline;
     padding: .3em .9em .4em;
@@ -124,4 +243,184 @@ body {
 
 .card-body {
     margin-bottom: 2.3rem;
+}
+
+.stats{
+    min-height: 400px;
+    transition: all .2s ease-in-out; 
+    background-color: white;
+}
+
+.stats-left{
+    width: 50%;
+}
+
+.stats-right{
+    width: 45%;
+}
+
+.logo{
+    width: 32px;
+}
+
+.pokemon-title{
+    height: 50px;
+    color: white;
+    font-size: 32px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.show {
+    opacity: 1;
+    transition: opacity 400ms;
+    display: block;
+}
+
+.hide {
+    opacity: 0;
+    transition: opacity 400ms;
+    display: none;
+}
+
+.accordeon{
+    min-height: 50px;
+    transition: all .2s ease-in-out; 
+    background-color: white;
+    
+}
+
+.accordeon-title{
+    height: 50px;
+    color: black;
+    font-size: 32px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+}
+
+.accordeon-body{
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 1s ease-out;
+}
+
+.table-head th {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
+
+table {
+    position: relative;
+    overflow: auto;
+}
+
+/* FLIP CARD */
+
+.flip-card {
+    background-color: white;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color: transparent;
+    color: black;
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+    background-color: transparent;
+    color: black;
+    transform: rotateY(180deg);
+  }
+
+  .progress-bar {
+	background-color: transparent;
+	border-radius: 20px;
+	position: relative;
+	margin: 5px;
+	height: 100%;
+	width: 100%;
+}
+
+.progress-done {
+	background: linear-gradient(to left, #F2709C, #FF9472);
+	box-shadow: 0 3px 3px -5px #F2709C, 0 2px 5px #F2709C;
+	border-radius: 20px;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 0;
+	opacity: 1;
+    transition: 1s ease 0.3s;
+    
+}
+
+.progress-red{
+    background: linear-gradient(to left, #cc0000, #ff6666);
+	box-shadow: 0 3px 3px -5px #ff6666, 0 2px 5px #ff6666;
+}
+
+.progress-orange{
+    background: linear-gradient(to left, #ff9900, #ffdd99);
+	box-shadow: 0 3px 3px -5px #ff9900, 0 2px 5px #ff9900;
+}
+
+.progress-yellow{
+    background: linear-gradient(to left, #bf8040, #ffff80);
+	box-shadow: 0 3px 3px -5px #d9b38c, 0 2px 5px #d9b38c;
+}
+
+.progress-blue{
+    background: linear-gradient(to left, #0000ff, #00ffff);
+	box-shadow: 0 3px 3px -5px #1aa3ff, 0 2px 5px #1aa3ff;
+}
+
+.progress-green{
+    background: linear-gradient(to left, #00cc00, #99ff33);
+	box-shadow: 0 3px 3px -5px #00cc00, 0 2px 5px #00cc00;
+}
+
+.progress-pink{
+    background: linear-gradient(to left, #cc00ff, #ff99cc);
+	box-shadow: 0 3px 3px -5px #ff66cc, 0 2px 5px #ff66cc;
+}
+
+
+.table-stats tr th{
+    width: 50px;
+    text-align: right;
+}
+
+.table-hover th {
+    cursor: pointer;
 }

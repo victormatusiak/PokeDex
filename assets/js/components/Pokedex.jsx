@@ -3,7 +3,6 @@
 import React, {Component} from 'react';
 import '../util.js'
 
-import Pokemon from './Pokemon';
 import PokemonList from './PokemonList';
 import axios from 'axios';
 import InfiniteScroll from 'react-infinite-scroll-component';
@@ -19,7 +18,7 @@ class Pokedex extends Component {
             totalItems: 0,
             next: '',
             last: '',
-            url: 'http://localhost:8000',
+            url: 'http://'+ window.location.hostname +':8000',
         };
 
         this.getPokemons = this.getPokemons.bind(this);
@@ -89,7 +88,7 @@ class Pokedex extends Component {
                 <section className="row-section" id="pokedex">
                     <div className="container ">
                         <div className="row">
-                            <h2 className="text-center"><span>Pokedex</span></h2>
+                            <img className="logo m-4" src="/build/img/logo.png"/>
                         </div>
                         <div className=" my-2 my-lg-0  d-flex justify-content-center "> 
                             <form  className="input-group form-inline w-50">

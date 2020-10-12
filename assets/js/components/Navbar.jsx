@@ -1,17 +1,41 @@
-import React from 'react';
-import {Link, withRouter} from 'react-router-dom';
-import auth0Client from '../utils/Auth';
+import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import LoginButton from './LoginButton';
+
+
+class Navbar extends Component {
     
-function Navbar () {
+    constructor() {
+        super();
+        this.state = { 
+           user: {},
+           loggedIn: false,
+        };
+    }
 
-    const logOut = () => {
-        
-    };
+    componentDidMount() {
+        let user = window.user;
 
+        if(user != 'undefined'){
+            const promise = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                  resolve(window.user);
+                }, 300);
+            }).then((value) => {
+                if(value){
+                    this.setState({
+                        user: value,
+                        loggedIn: true,
+                    })
+                }
+            })
+        } 
+    }
+
+    render() {
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <Link className={"navbar-brand"} to={"/"}>Logo</Link>
+                <Link className={"navbar-brand"} to={"/"}><img className="logo" src="/build/img/logo.png"></img></Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -23,18 +47,18 @@ function Navbar () {
                         </li>
                         <li className="nav-item">
                             <Link className={"nav-link"} to={"/inventory"}> Inventory </Link>
+                            {this.state.loggedIn}
                         </li>
                     </ul>
 
-                    <form className="form-inline my-2 my-lg-0">               
-                        <Link className={"nav-link"} to={"/login"}> 
-                            
-                            <button className="btn btn-outline-success my-2 my-sm-0">Log In</button>
-                        </Link> 
-                    </form>
-               </div>
-           </nav>
-    )
+                    <LoginButton
+                        loggedIn = {this.state.loggedIn}
+                        user = {this.state.user}
+                    />
+                </div>
+            </nav>
+        )
+    }
 }
-    
-export default withRouter(Navbar);
+
+export default Navbar;

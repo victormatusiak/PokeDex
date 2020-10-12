@@ -15,4 +15,12 @@ class DefaultController extends AbstractController
     {
         return $this->render('default/index.html.twig');
     }
+
+    /**
+     * @Route("/pokemon/{id}", name="pokemon")
+     */
+    public function pokemon(){
+            return $this->render('default/index.html.twig');
+    }
+
 }

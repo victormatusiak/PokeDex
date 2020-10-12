@@ -4,7 +4,7 @@ class Login extends Component {
     
     render() {
         return (
-            <form className="container" method="post">
+            <form className="container mt-2" method="post">
             
                 <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
                 <label htmlFor="inputUsername">Username</label>
@@ -16,7 +16,7 @@ class Login extends Component {
                 <input type="hidden" name="_csrf_token" value={window.csrf}></input>
         
             
-                <button className="btn btn-lg btn-primary" type="submit">
+                <button className="btn btn-lg btn-primary mt-4" type="submit">
                     Sign in
                 </button>
             </form>

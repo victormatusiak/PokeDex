@@ -1,10 +1,21 @@
 import React from "react";
-import { useAuth0 } from "@auth0/auth0-react";
+import {Link} from 'react-router-dom';
 
-const LoginButton = () => {
-  const { loginWithRedirect } = useAuth0();
+const LoginButton = (props) => {
+  let button;
 
-  return <button  className="btn btn-outline-success my-2 my-sm-0" onClick={() => loginWithRedirect()}>Log In</button>;
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
+  if(props.loggedIn){
+    button = <Link className={"nav-link"} to={"/auth/logout"}><button className="btn btn-outline-success my-2 my-sm-0">Log out {props.user.name}</button></Link>
+  }else {
+    button = <Link className={"nav-link"} to={"/login"}><button className="btn btn-outline-success my-2 my-sm-0">Log In</button></Link>
+  }
+
+  return <form className="form-inline my-2 my-lg-0">{button}</form>;
+    
 };
 
 export default LoginButton;

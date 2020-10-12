@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import Pokemon from './Pokemon';
+import PokemonElement from './PokemonElement';
 
 const PokemonList = props => {
 
@@ -8,7 +8,7 @@ const PokemonList = props => {
         <div className={'row  d-flex justify-content-around p-4'}>
         { props.pokemons.map(pokemon =>
             
-            <Pokemon 
+            <PokemonElement 
                 id = {pokemon.id}
                 name = {pokemon.name}
                 img = {pokemon.sprite}
