@@ -19,17 +19,20 @@ const Typing = ({name, relations}) => {
             <h3>{name}</h3>
             <table className="table-stats table h-100 m-auto">
                 <thead>
-                    <th>
-                        Damage
-                    </th>
-                    <th>
-                        Type
-                    </th>
+                    <tr>
+                        <th>
+                            Damage
+                        </th>
+                        <th>
+                            Type
+                        </th>
+                    </tr>
                 </thead>
                 <tbody>
                     {
-                        filteredMultipliers.map(name =>
+                        filteredMultipliers.map((name, index) =>
                             <Row 
+                                key={index}
                                 name = {name}
                                 types = {relations[name]}
                             />

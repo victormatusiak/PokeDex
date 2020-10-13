@@ -4,7 +4,7 @@ import {capitalize, restring} from '../../util.js';
 import Type from './Type'
 
 const Move = ({number, move}) => (
-        <tr>
+        <tr key={move.name}>
            <td>
                {number}
            </td>

@@ -35,8 +35,9 @@ const MoveList = ({moves}) => {
                     </tr>
             </thead>
             <tbody>
-                    { helper(moves, sort, direction).map(move =>
+                    { helper(moves, sort, direction).map((move, index) =>
                         <Move
+                            key={index}
                             number={"-"}
                             move={move}
                         />
